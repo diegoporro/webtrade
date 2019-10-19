@@ -1,0 +1,2 @@
+Django==2.0.1
+Django-session-timeout==0.0.4
