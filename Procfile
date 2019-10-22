@@ -1,0 +1,1 @@
+web: gunicorn webtrade.wsgi --log-file -
