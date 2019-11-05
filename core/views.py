@@ -48,6 +48,7 @@ def dashboard(request):
 
     fee_trx = 0.014
     fee = '1.4%'
+    logs = Log.objects.order_by('-id')[:5]
 
     form = AssetTransacction(request.POST or None)
     if form.is_valid():
@@ -72,6 +73,7 @@ def dashboard(request):
 
     context = {
         "form": form,
+        "logs": logs,
         "localtime": localtime,
         "last_login": last_login,
         "fee": fee,
