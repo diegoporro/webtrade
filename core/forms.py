@@ -21,7 +21,7 @@ def my_choices():
 
 
 def my_assts():
-    url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=f7f6fd1e-07d1-4a4e-875e-8d9d41936291'
+    url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=a997cb3b-ccaf-42ce-aa7f-34ba3b1dba08'
     asst = []
     for foo in range(6):
         # t = []
