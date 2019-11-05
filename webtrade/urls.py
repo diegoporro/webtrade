@@ -24,6 +24,7 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('cryptos/', views.cryptos, name='cryptos'),
     path('bot/', views.bot, name='bot'),
+    path('logs/', views.logs, name='logs'),
     path('logout/', views.logout_view, name='logout'),
 ]
 

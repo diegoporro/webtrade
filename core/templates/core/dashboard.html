@@ -10,7 +10,12 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Asset Portfolio</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="myFunction_print()"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+            <script>
+                function myFunction_print() {
+                    window.print();
+                }
+            </script>
         </div>
 
         <!-- Top Earning Values -->
@@ -87,22 +92,16 @@
 
         <!-- Trading View Candelstick -->
         <div class="row">
-
             <div class="col-lg-12 mb-4">
-
-                <!-- Text 2 -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-chart-bar text-primary"></i> Trading View</h6>
                     </div>
                     <div class="card-body">
                         <div class="text-center">
-
                             <div id="container1">
                                 <script>
                                     Highcharts.getJSON('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/new-intraday.json', function (data) {
-
-
                                         // create the chart
                                         Highcharts.stockChart('container1', {
                                             title: {
@@ -142,17 +141,39 @@
 
                                 </script>
                             </div>
-
                         </div><br><b>
-                        <div>Broker: <span class="text-dark">Binance</span></div>
-                        <div>Bid: <span class="text-danger">$ 7831.15</span></div>
-                        <div>Ask: <span class="text-primary">$ 8121.64</span></div></b><br>
-                        <a href="#" class="d-md-inline-block btn btn-primary shadow-sm"><i class="fas fa-money-bill text-white-50"></i><b> Buy</b></a>
-                        <a href="#" class="d-none d-md-inline-block btn btn-danger shadow-sm"><i class="fas fa-money-bill text-white-50"></i><b> Sell</b></a>
-
+                        <div class="container">
+                            <div class="card shopping-cart">
+                                <div class="card-body">
+                                    <div class="row">
+                                        {% block content %}
+                                            <form method="post" class="user">
+                                                {% csrf_token %}
+                                                {{ form }}
+                                                <br>
+                                                <div class="pull-right">
+                                                    <div class="pull-right" style="margin: 5px">
+                                                        Fee: <b>{{ fee }}</b>
+                                                    </div>
+                                                    <div class="pull-right" style="margin: 5px">
+                                                        {#                                                        Total price: <b>{{ total }}</b>#}
+                                                    </div>
+                                                </div>
+                                                <button class="btn btn-success pull-right" type="submit" onclick="myFunction()" style="box-shadow: lightgray 2px 2px;"><b>Submit order</b></button>
+                                                <script>
+                                                    function myFunction() {
+                                                        alert("Your order have been places!\n Your order was:" +
+                                                                "{{ trx }} \n {{ qty }} at this price {{ asst }} \n Total: {{ total }}");
+                                                    }
+                                                </script>
+                                            </form>
+                                        {% endblock %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div></b>
                     </div>
                 </div>
-
             </div>
         </div>
 

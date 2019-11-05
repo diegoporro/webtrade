@@ -54,7 +54,6 @@
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
-
         <!-- Divider -->
         <hr class="sidebar-divider">
 
@@ -65,6 +64,9 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
+            <a class="nav-link" href="{% url 'logs' %}">
+                <i class="fas fa-fw fa-list-alt"></i>
+                <span>Logs</span></a>
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-cog"></i>
                 <span>Broker Selector</span>
@@ -115,7 +117,7 @@
                 <span class="text-capitalize">{{ user }}</span>
             </a>
             <a class="nav-link" href="#" data-toggle="{{ user }}" aria-expanded="true">
-               <i class="fas fa-fw fa-history"></i>
+                <i class="fas fa-fw fa-history"></i>
                 <span>{{ last_login}}</span>
             </a>
         </li>
@@ -136,7 +138,7 @@
 
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-            <div class="col-md-10">
+                <div class="col-md-10">
                     <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
                     <coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd" background-color="#ffffff" locale="es"></coingecko-coin-price-marquee-widget>
                 </div>
@@ -160,10 +162,10 @@
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                             <a class="dropdown-item" href="{% url 'admin:index' %}">
                                 {% if request.user.is_superuser %}
-                                <i class="fa fa-user-secret text-primary " style="text-shadow: 1px 1px lightgray;"></i>     {{ user }}
-                            {% else %}
-                                <i class="fa fa-user text-primary" style="text-shadow: 1px 1px lightgray;"></i>     {{ user }}
-                            {% endif %}
+                                    <i class="fa fa-user-secret text-primary " style="text-shadow: 1px 1px lightgray;"></i>     {{ user }}
+                                {% else %}
+                                    <i class="fa fa-user text-primary" style="text-shadow: 1px 1px lightgray;"></i>     {{ user }}
+                                {% endif %}
                             </a>
                             <a class="dropdown-item" href="#">
                                 <i class="fas fa-list fa-sm fa-fw mr-2 text-info"></i>
@@ -192,7 +194,7 @@
         <footer class="sticky-footer align-content-center">
             <div class="container">
                 <div class="text-center">
-                    <img src="{% static 'core/img/DP.png' %}" alt="img" height="7%" width="7%"><br>
+                    <img src="{% static 'core/core/img/DP.png' %}" alt="img" height="7%" width="7%"><br>
                     <small>© 2019 DP Trading System <sup>V 1.0.0</sup> </small>
                 </div>
             </div>
