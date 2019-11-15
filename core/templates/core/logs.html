@@ -9,7 +9,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Assets Transacction Logs</h1>
+            <h1 class="h3 mb-0 text-primary" style="text-shadow: black 1px 1px">Assets Transaction Logs</h1>
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="myFunction_print()"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
             <script>
                 function myFunction_print() {
@@ -23,25 +23,24 @@
 
             <div class="col-lg-12 mb-4">
 
-                <!-- Text 2 -->
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-cogs text-primary "></i> Transacction BUY</h6>
+                <div class="card shadow mb-4 bg-gray-900 border-dark">
+                    <div class="card-header py-3 bg-gray-900 border-dark">
+                        <h6 class="m-0 font-weight-bold text-light" style="text-shadow: black 1px 1px"><i class="fa fa-list text-light"></i> Transaction BUY</h6>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body bg-gray-900">
                         {% for foo in log_in %}
-                            <li>{{ foo }}</li><hr>
+                            <li class="text-light">{{ foo }}</li><hr>
                         {% endfor %}
                     </div>
                 </div>
                 <br>
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-cogs text-primary "></i> Transacction SELL</h6>
+                <div class="card shadow mb-4 bg-gray-900 border-dark">
+                    <div class="card-header py-3 bg-gray-900 border-dark">
+                        <h6 class="m-0 font-weight-bold text-light" style="text-shadow: black 1px 1px"><i class="fa fa-list text-light "></i> Transacction SELL</h6>
                     </div>
                     <div class="card-body">
                         {% for foo in log_out %}
-                            <li>{{ foo }}</li><hr>
+                            <li class="text-light">{{ foo }}</li><hr>
                         {% endfor %}
                     </div>
                 </div>
