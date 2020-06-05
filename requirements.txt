@@ -1,4 +1,4 @@
-Django==3.0.3
+Django==3.0.7
 Django-session-timeout==0.0.4
 gunicorn==19.9.0
 requests==2.22
